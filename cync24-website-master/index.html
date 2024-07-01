@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>(c)ync</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="assets/effects/glitch.css">
+    <link rel="stylesheet" href="assets/effects/flicker.css">
+    <link rel="stylesheet" href="assets/cursor/cursor.css">
+    <link rel="stylesheet" href="assets/navbar/navbar.css">
+    <link rel="stylesheet" href="assets/effects/stars.css">
+    <link rel="stylesheet" href="assets/navbar/dropdown.css">
+
+</head>
+
+<body>
+    <section class="" style="position: absolute;">
+        <div class="object" data-value="50" alt="">
+            <div id="stars"></div>
+            <div id="stars2"></div>
+            <div id="stars3"></div>
+            <div id="title">
+            </div>
+    </section>
+    <div class="container">
+        <div class="cursor-scale">
+            <div class="header">
+                <div class="object" data-value="-3">
+                    <h1 data-text="(c)ync">
+                        <span class="flicker">(</span>c<span class="flicker">)</span>ync
+                    </h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="cursor"></div>
+
+    <nav class="navbar">
+
+        <ul class="navbar-links" id="navbar-links">
+            <li class="sub-menu-parent" tab-index="0">
+
+                <div class="cursor-scale">
+            <li><a href="#home">REGISTER</a></li>
+            </div>
+            <div class="cursor-scale">
+                <li><a href="#events">EVENTS</a></li>
+            </div>
+            <div class="cursor-scale">
+                <li><a href="#about">ABOUT</a></li>
+            </div>
+            <ul class="sub-menu">
+                <div class="cursor-scale">
+                    <li><a href="#members">MEMBERS</a></li>
+                </div>
+                <li><a href="#">Sub Item 1</a></li>
+            </ul>
+            <div class="cursor-scale">
+                <li><a href="#contact">CONTACT</a></li>
+            </div>
+            </li>
+        </ul>
+        <div class="navbar-toggle" id="navbar-toggle">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+
+    <div>
+        <style>
+           
+        </style>
+        <script>
+            function updateNameFields() {
+                var select = document.getElementById("event_selection");
+                var nameFieldsContainer = document.getElementById("name-fields-container");
+                nameFieldsContainer.innerHTML = '';
+
+                var numFields;
+                switch (select.value) {
+                    case "selec_event":
+                        numFields = 0;
+                        break;
+                    case "content_creation":
+                        numFields = 5;
+                        break;
+                    case "photography":
+                        numFields = 3;
+                        break;
+                    case "videography":
+                        numFields = 2;
+                        break;
+                    case "chatbot_creation":
+                        numFields = 2;
+                        break;
+                    case "comic_design":
+                        numFields = 2;
+                        break;
+                    case "valorant_tournament":
+                        numFields = 6;
+                        break;
+                    default:
+                        numFields = 0;
+                }
+
+                for (var i = 1; i <= numFields; i++) {
+                    var formGroup = document.createElement("div");
+                    formGroup.className = "form-group";
+
+                    var label = document.createElement("label");
+                    label.setAttribute("for", "name" + i);
+                    label.textContent = "Participant " + i + ":";
+
+                    var input = document.createElement("input");
+                    input.type = "text";
+                    input.id = "name" + i;
+                    input.name = "name" + i;
+                    input.required = true;
+
+                    formGroup.appendChild(label);
+                    formGroup.appendChild(input);
+
+                    nameFieldsContainer.appendChild(formGroup);
+                }
+            }
+
+            window.onload = function () {
+                updateNameFields(); // Initialize with the default selection
+            };
+        </script>
+        <div id="form_body">
+            <div class="container2">
+
+                <h2>(c)ync Registration Form</h2>
+                <form action="https://formspree.io/f/mrbzgeza" method="POST">
+                    <div class="form-group">
+                        <label for="school_name">School Name:</label>
+                        <input type="text" id="school_name" name="school_name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="teacher_name">Teacher's Name:</label>
+                        <input type="text" id="teacher_name" name="teacher_name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="teacher_mobile_no">Teacher's Mobile Number:</label>
+                        <input type="text" id="school_code" name="school_code" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="event_selection">Select Event:</label>
+                        <select id="event_selection" name="event_selection" required onchange="updateNameFields()">
+                            <option value="select_event">Select Event</option>
+                            <option value="content_creation">Content Creation</option>
+                            <option value="photography">Photography</option>
+                            <option value="videography">Videography + Video Editing</option>
+                            <option value="chatbot_creation">Chatbot Creation</option>
+                            <option value="comic_design">Comic Design</option>
+                            <option value="valorant_tournament">Valorant Tournament</option>
+                        </select>
+                    </div>
+                    <div id="name-fields-container"></div>
+                    <div class="form-group">
+                        <button type="submit">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="parallax.js"></script>
+    <script src="form.js"></script>
+    <script src="assets/navbar/navbar.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Agraham", sans-serif;
+    background: radial-gradient(ellipse at bottom, #08121f 0%, #08121f 100%);
+    background-size: cover;
+    height: 100vh;
+    overflow: scroll;
+    cursor: none;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(0, 0) scale(1.5);
+}
+
+.header {
+    font-family: "DREAMS";
+    z-index: 1;
+    position: relative;
+    color: #fff;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 32px;
+    line-height: 60px;
+    text-align: center;
+    perspective: 1000px; /* Adds depth to the 3D effect */
+}
+/*<----Form---->*/
+
+#form_body {
+    padding-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white;
+    align-items: center;
+}
+
+.container2 {
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    outline: none;
+    background: transparent;
+    transition: background-color 0.3s;
+    border-width: 0px;
+    border-bottom: 1px solid rgb(255, 255, 255);
+    outline: none;
+}
+
+
+input[type="text"]:focus,
+select:focus {
+background-color: #687ca04d;
+border-radius: 2px;
+}
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #00c6ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #007bbf;
+}
+
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.3;
+}
